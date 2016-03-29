@@ -1,0 +1,7 @@
+
+  <%#= @greeting %>
+  Hi <%= @school_admin.email %>,
+
+Your <%= @school_admin.school_name %> is created. Please login and upload your students and teachers details
+
+<%= link_to "here", "#{SITE}/schools/#{@school_admin.id}/edit?reset_password_token=#{@school.reset_password_token}" %>

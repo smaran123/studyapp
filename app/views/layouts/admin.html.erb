@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Studyapp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= link_to "create school admin",new_admin_school_path %>
+Admin Layout
+<% if admin_signed_in? %>
+<%= link_to "SignOut", destroy_admin_session_path, :method => :delete %>
+<% else %>
+<%= link_to "Signin", new_admin_session_path %>
+<%= link_to "SignUp", new_admin_registration_path %>
+
+<% end %>
+
+ <p class="notice"><%= notice %></p>
+ <p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+</body>
+</html>
